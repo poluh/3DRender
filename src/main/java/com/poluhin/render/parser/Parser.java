@@ -15,7 +15,8 @@ public class Parser {
         return Files.readAllLines(Paths.get(pathToFile))
                 .stream()
                 .map(line -> {
-                    var parts = Arrays.stream(line.split("\\s*,\\s*")).map(Integer::parseInt).toArray(Integer[]::new);
+                    var parts = Arrays.stream(line.replaceAll("[(|)]", "")
+                            .split("\\s*,\\s*")).map(Integer::parseInt).toArray(Integer[]::new);
                     return new Polygon(new Point(parts[0], parts[1], parts[2]),
                             new Point(parts[3], parts[4], parts[5]),
                             new Point(parts[6], parts[7], parts[8]));
