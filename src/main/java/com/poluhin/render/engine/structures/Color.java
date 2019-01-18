@@ -37,4 +37,9 @@ public class Color {
     public void setB(int b) {
         this.b = b;
     }
+
+    @Override
+    public String toString() {
+        return String.format("{R=%d, G=%d, B=%d}", r, g, b);
+    }
 }

@@ -35,4 +35,9 @@ public class Point {
     public void setDepth(int depth) {
         this.depth = depth;
     }
+
+    @Override
+    public String toString() {
+        return String.format("{x=%d, y=%d, z=%d}", x, y, depth);
+    }
 }
