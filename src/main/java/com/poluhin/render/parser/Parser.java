@@ -1,8 +1,5 @@
 package com.poluhin.render.parser;
 
-import com.poluhin.render.engine.structures.Point;
-import com.poluhin.render.engine.structures.Polygon;
-
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
