@@ -1,11 +1,16 @@
 package com.poluhin.render.engine.node;
 
+import java.util.HashSet;
 import java.util.Set;
 
 public class Node {
     private Set<Point> points;
     private Point rotationCenter;
     private double depth;
+
+    public Node() {
+        points = new HashSet<>();
+    }
 
     public Node(Set<Point> points) {
         this.points = points;
