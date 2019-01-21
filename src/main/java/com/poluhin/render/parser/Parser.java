@@ -16,12 +16,13 @@ public class Parser {
                 Files.readAllLines(Paths.get(pathToFile))
                         .stream()
                         .map(line -> {
+                            line = line.substring(3);
                             var parts = Arrays.stream(line.replaceAll("[(|)]", "")
-                                    .split("\\s*,\\s*")).map(Integer::parseInt).toArray(Integer[]::new);
+                                    .split("\\s+")).map(Double::new).toArray(Double[]::new);
                             if (parts.length != 3) {
                                 throw new IllegalArgumentException("Parse failed in line \"" + line + "\"");
                             }
-                            return new Point(parts[0], parts[1], parts[3]);
+                            return new Point((parts[0]), (parts[1]), (parts[2]));
                         })
                         .collect(Collectors.toSet())
         );
