@@ -22,7 +22,7 @@ public class Parser {
                             if (parts.length != 3) {
                                 throw new IllegalArgumentException("Parse failed in line \"" + line + "\"");
                             }
-                            return new Point((parts[0]), (parts[1]), (parts[2]));
+                            return new Point((parts[0]), (parts[1] * -1.2), (parts[2]));
                         })
                         .collect(Collectors.toSet())
         );
